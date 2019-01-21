@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ProductsService} from "../products.service";
 
 @Component({
@@ -7,10 +7,11 @@ import {ProductsService} from "../products.service";
   styleUrls: ['./add.component.css']
 })
 export class AddComponent {
-  @Input() ps: ProductsService;
   product = {};
+  constructor(private ps: ProductsService){
+
+  }
   onAdd() {
-    alert('click add');
     this.ps.add(this.product);
     this.product = {};
   }

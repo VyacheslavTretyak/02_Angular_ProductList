@@ -24,7 +24,7 @@ import { RoutingErrorComponent } from './routing-error/routing-error.component';
       FormsModule,
       AppRoutingModule
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

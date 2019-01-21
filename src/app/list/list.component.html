@@ -1,3 +1,7 @@
-<p>
-  list works!
+<input [(ngModel)]="search" (input)="onSearch()">
+<br>
+<a routerLink="" class="btn btn-primary">Home</a>
+
+<p *ngFor="let product of products">
+  {{product.name}}
 </p>

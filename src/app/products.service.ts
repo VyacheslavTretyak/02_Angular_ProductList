@@ -4,7 +4,6 @@ import {Injectable} from '@angular/core';
 export class ProductsService {
     products = [];
     add(product){
-        alert("hello");
         this.products.push(product);
     }
     getAll(search= '') {

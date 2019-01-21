@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ProductsService} from "../products.service";
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+    products = [];
+    search = '';
+    constructor(private ps: ProductsService) {
+        this.products = ps.getAll();
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
+
+    onSearch() {
+        this.products = this.ps.getAll(this.search);
+    }
+
 
 }
